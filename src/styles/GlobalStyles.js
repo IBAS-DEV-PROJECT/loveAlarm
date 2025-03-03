@@ -12,6 +12,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   button {
+    background: none;
+    border: none;
     cursor: pointer;
   }
 `;
