@@ -1,11 +1,15 @@
 import React from 'react';
 
-function LandingPage() {
+// components
+import Layout from '../components/common/Layout';
+import LandingContainer from '../components/landing/LandingContainer';
+
+const LandingPage = () => {
   return (
-    <>
-      <h1>Landing Page입니다.</h1>
-    </>
+    <Layout>
+      <LandingContainer />
+    </Layout>
   );
-}
+};
 
 export default LandingPage;

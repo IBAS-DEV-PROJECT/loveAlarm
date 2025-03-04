@@ -2,8 +2,9 @@ const Theme = {
   colors: {
     white: '#FFFFFF',
     black: '#191414',
-    primary: '#FB1A7',
-    secondary: '#FFECEC',
+    primary: '#FFECEC',
+    secondary: '#FFFAF5',
+    pink: '#FB01A7',
     gray: {
       light: '#B3B3B3',
       dark: '#535353',
@@ -16,29 +17,21 @@ const Theme = {
   // },
   fontSize: {
     desktop: {
-      xxxs: '6px',
-      xxs: '8px',
-      xs: '10px',
-      sm: '12px',
-      m: '14px',
-      lg: '16px',
-      xl: '18px',
-      xxl: '20px',
-      xxxl: '24px',
+      xxxs: '16px',
+      xxs: '18px',
+      xs: '20px',
+      sm: '24px',
+      m: '28px',
+      lg: '30px',
+      xl: '32px',
+      xxl: '36px',
+      xxxl: '92px',
     },
   },
   borderRadius: {
     s: '8px',
     m: '10px',
     l: '12px',
-  },
-  breakpoints: {
-    // 모바일: 375px 이상
-    mobile: '375px',
-    // 태블릿: 768px 이상
-    tablet: '768px',
-    // 데스크톱: 1920px 이상
-    desktop: '1920px',
   },
 };
 
