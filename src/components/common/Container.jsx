@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import FlexBox from '../../styles/common/FlexStyle';
 
 const StyledContainer = styled(FlexBox)`
-  width: 1024px;
-  height: 1080px;
+  width: 54%;
+  height: 100vh;
   background-color: ${({ theme }) => theme.colors.primary};
 `;
 

@@ -1,10 +1,12 @@
 import React from 'react';
+import Layout from '../components/common/Layout';
+import ResultContainer from '../components/result/ResultContainer';
 
 function ResultPage() {
   return (
-    <>
-      <h1>Result Page입니다.</h1>
-    </>
+    <Layout>
+      <ResultContainer />
+    </Layout>
   );
 }
 
