@@ -1,11 +1,10 @@
 import React from 'react';
 
+// components
+import LoadingScreen from '../components/loading/LoadingScreen';
+
 function LoadingPage() {
-  return (
-    <>
-      <h1>Loading Page입니다.</h1>
-    </>
-  );
+  return <LoadingScreen />;
 }
 
 export default LoadingPage;
