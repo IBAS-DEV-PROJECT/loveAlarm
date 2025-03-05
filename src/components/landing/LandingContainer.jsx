@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 // assets
 import BannerImg from '../../assets/images/banner.png';
@@ -34,9 +35,7 @@ const Right = styled.div`
 `;
 
 const LandingContainer = () => {
-  const handleStart = () => {
-    console.log('시작하기 클릭!');
-  };
+  const navigate = useNavigate();
 
   return (
     <Container>
@@ -66,7 +65,9 @@ const LandingContainer = () => {
           <StyledText type="caption">#로맨틱</StyledText>
           <StyledText type="caption">#성공적</StyledText>
         </FlexBox>
-        <Button type="start">나랑 가까운 사람 찾으러 가기</Button>
+        <Button type="start" onClick={() => navigate('/qna')}>
+          나랑 가까운 사람 찾으러 가기
+        </Button>
       </FlexBox>
     </Container>
   );

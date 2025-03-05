@@ -24,7 +24,7 @@ const Theme = {
       m: '28px',
       lg: '30px',
       xl: '32px',
-      xxl: '36px',
+      xxl: '64px',
       xxxl: '92px',
     },
   },

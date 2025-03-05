@@ -8,9 +8,9 @@ const StyledContainer = styled(FlexBox)`
   background-color: ${({ theme }) => theme.colors.primary};
 `;
 
-const Container = ({ children, ...props }) => {
+const Container = ({ children, row = 'between', ...props }) => {
   return (
-    <StyledContainer dir="col" row="between" col="center" {...props}>
+    <StyledContainer dir="col" row={row} col="center" {...props}>
       {children}
     </StyledContainer>
   );

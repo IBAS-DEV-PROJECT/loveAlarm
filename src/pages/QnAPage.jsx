@@ -1,10 +1,14 @@
 import React from 'react';
 
+// components
+import Layout from '../components/common/Layout';
+import TestForm from '../components/qna/TestForm';
+
 function QnAPage() {
   return (
-    <>
-      <h1>QnA Page입니다.</h1>
-    </>
+    <Layout>
+      <TestForm />
+    </Layout>
   );
 }
 
