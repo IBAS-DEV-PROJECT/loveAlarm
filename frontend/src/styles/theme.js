@@ -2,36 +2,31 @@ const Theme = {
   colors: {
     white: '#FFFFFF',
     black: '#191414',
-    primary: '#FFECEC',
-    secondary: '#FFFAF5',
-    pink: '#FB01A7',
+    pink: {
+      light: '#FFECEC',
+      dark: '#FB01A7',
+      circle: '#FAB7E3',
+      next: '#FF758C',
+    },
+    background: '#FFFAF5',
     gray: {
       light: '#B3B3B3',
       dark: '#535353',
     },
   },
-  // spacing: {
-  //   small: '8px',
-  //   medium: '16px',
-  //   large: '24px',
-  // },
   fontSize: {
-    desktop: {
-      xxxs: '16px',
-      xxs: '18px',
-      xs: '20px',
-      sm: '24px',
-      m: '28px',
-      lg: '30px',
-      xl: '32px',
-      xxl: '64px',
-      xxxl: '92px',
+    title: '96px',
+    text: {
+      xs: '24px',
+      s: '32px',
+      m: '36px',
+      l: '40px',
     },
-  },
-  borderRadius: {
-    s: '8px',
-    m: '10px',
-    l: '12px',
+    question: {
+      s: '46px',
+      m: '52px',
+      l: '64px',
+    },
   },
 };
 

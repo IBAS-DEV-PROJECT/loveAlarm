@@ -6,7 +6,7 @@ import GlobalStyles from './styles/GlobalStyles';
 
 // import pages
 import LandingPage from './pages/LandingPage';
-import QnAPage from './pages/QnAPage';
+import TestPage from './pages/TestPage';
 import LoadingPage from './pages/LoadingPage';
 import ResultPage from './pages/ResultPage';
 
@@ -16,7 +16,7 @@ function App() {
       <GlobalStyles />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/qna" element={<QnAPage />} />
+        <Route path="/test" element={<TestPage />} />
         <Route path="/loading" element={<LoadingPage />} />
         <Route path="/result" element={<ResultPage />} />
       </Routes>

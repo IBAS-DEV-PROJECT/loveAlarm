@@ -9,10 +9,11 @@ import { Img } from '../../styles/common/ImgStyle';
 import FlexBox from '../../styles/common/FlexStyle';
 
 const LogoWrapper = styled(FlexBox)`
-  width: 1024px;
+  width: 48rem;
   height: fit-content;
   overflow: hidden;
   cursor: pointer;
+  background-color: ${({ theme }) => theme.colors.pink.light};
 `;
 
 const Header = () => {
@@ -22,7 +23,7 @@ const Header = () => {
 
   return (
     <LogoWrapper row="center">
-      <Img src={LogoImg} height="124px" onClick={handleOpenIbasWeb} />
+      <Img src={LogoImg} width="17.375rem" height="5.75rem" onClick={handleOpenIbasWeb} />
     </LogoWrapper>
   );
 };
