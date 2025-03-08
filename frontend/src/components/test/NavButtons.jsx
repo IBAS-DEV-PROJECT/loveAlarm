@@ -47,7 +47,7 @@ const NavButtons = ({ currentIndex, setCurrentIndex, questions, answers }) => {
   // 완료 버튼 클릭 시, API 호출
   const handleSubmit = async () => {
     try {
-      const response = await fetch('https://endpoint.com/submit', {
+      const response = await fetch('http://127.0.0.1:5000/api/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
