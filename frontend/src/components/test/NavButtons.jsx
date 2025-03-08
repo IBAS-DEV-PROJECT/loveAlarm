@@ -33,7 +33,7 @@ const Button = styled.button`
 `;
 
 const NavButtons = ({ currentIndex, setCurrentIndex, questions, answers }) => {
-  const { setResult } = useAnswers();
+  const { setResult, setLoading } = useAnswers();
 
   const handleNext = () => {
     if (currentIndex < questions.length - 1) {
@@ -49,6 +49,7 @@ const NavButtons = ({ currentIndex, setCurrentIndex, questions, answers }) => {
 
   // 완료 버튼 클릭 시, API 호출
   const handleSubmit = async () => {
+    setLoading(true);
     // http://127.0.0.1:5000/api/submit
 
     try {
@@ -71,6 +72,8 @@ const NavButtons = ({ currentIndex, setCurrentIndex, questions, answers }) => {
       alert(`테스트 완료!`);
     } catch (error) {
       alert('제출 중 오류가 발생했습니다. 다시 시도해주세요.');
+    } finally {
+      setLoading(false);
     }
   };
 

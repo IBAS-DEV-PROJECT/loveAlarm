@@ -4,7 +4,7 @@ import React from 'react';
 import Layout from '../components/common/Layout';
 import TestForm from '../components/test/TestForm';
 
-function QnAPage() {
+function TestPage() {
   return (
     <Layout>
       <TestForm />
@@ -12,4 +12,4 @@ function QnAPage() {
   );
 }
 
-export default QnAPage;
+export default TestPage;

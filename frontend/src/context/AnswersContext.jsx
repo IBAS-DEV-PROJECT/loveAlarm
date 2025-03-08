@@ -6,10 +6,13 @@ const AnswersContext = createContext();
 // Provider 컴포넌트
 export const AnswersProvider = ({ children }) => {
   const [answers, setAnswers] = useState({});
-  const [result, setResult] = useState(null); // API 응답 데이터
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   return (
-    <AnswersContext.Provider value={{ answers, setAnswers, result, setResult }}>
+    <AnswersContext.Provider
+      value={{ answers, setAnswers, result, setResult, loading, setLoading }}
+    >
       {children}
     </AnswersContext.Provider>
   );
