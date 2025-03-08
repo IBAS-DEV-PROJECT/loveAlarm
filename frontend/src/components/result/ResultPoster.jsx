@@ -61,7 +61,13 @@ const Circle = styled.div`
   animation: ${pulse} 2s infinite ease-in-out;
 `;
 
-const ResultPoster = () => {
+const ScoreText = styled.p`
+  font-size: ${({ theme }) => theme.fontSize.text.m};
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.pink.light};
+`;
+
+const ResultPoster = ({ score }) => {
   return (
     <FlexBox height="34.25rem" dir="col" row="between" col="center">
       <ResultTitle>누군가 당신의 좋알람을 울렸습니다.</ResultTitle>
@@ -70,7 +76,10 @@ const ResultPoster = () => {
         <Circle size={240} />
         <Circle size={160} />
 
-        <Img width="76px" height="76px" src={HeartImg} />
+        <FlexBox dir="col" col="center">
+          <ScoreText>{score}점</ScoreText>
+          <Img width="76px" height="76px" src={HeartImg} />
+        </FlexBox>
       </CircleContainer>
     </FlexBox>
   );
