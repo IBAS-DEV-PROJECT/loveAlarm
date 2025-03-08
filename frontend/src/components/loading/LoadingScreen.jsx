@@ -5,6 +5,7 @@ import styled, { keyframes } from 'styled-components';
 import LockImg from '../../assets/images/lock.png';
 
 // styles
+import FlexBox from '../../styles/common/FlexStyle';
 import { Img } from '../../styles/common/ImgStyle';
 
 // 원형 애니메이션
@@ -24,14 +25,10 @@ const pulse = keyframes`
 `;
 
 // 배경 원 컨테이너
-const Background = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+const Background = styled(FlexBox)`
   width: 100vw;
   height: 100vh;
-  background: black;
+  background: #000000;
   position: relative;
   overflow: hidden;
 `;
@@ -85,7 +82,7 @@ const PinkCircle = styled.div`
 
 const LoadingScreen = () => {
   return (
-    <Background>
+    <Background dir="col" row="center" col="center">
       <Text>매칭 중...</Text>
 
       {/* 배경 원 */}
