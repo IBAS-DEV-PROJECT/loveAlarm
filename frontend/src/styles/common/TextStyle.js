@@ -30,7 +30,13 @@ export const Hastag = styled.p`
 
 // 부제목
 export const SubTitle = styled.h2`
-  font-size: ${({ theme }) => theme.fontSize.desktop.xxl};
+  font-size: ${({ theme }) => theme.fontSize.text.l};
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.black};
+`;
+
+export const Question = styled.p`
+  font-size: ${({ theme }) => theme.fontSize.text.m};
   font-weight: 700;
   color: ${({ theme }) => theme.colors.black};
 `;

@@ -22,8 +22,10 @@ const Theme = {
       m: '36px',
       l: '40px',
     },
-    question: {
+    q: {
+      xs: '42px',
       s: '46px',
+      sm: '48px',
       m: '52px',
       l: '64px',
     },
