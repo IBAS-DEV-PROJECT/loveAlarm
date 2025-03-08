@@ -11,12 +11,12 @@ API 작업 없이 일차적으로 UI만 구성했습니다.
 
 ```sh
 <Route path="/" element={<LandingPage />} />
-<Route path="/qna" element={<QnAPage />} />
+<Route path="/test" element={<TestPage />} />
 <Route path="/loading" element={<LoadingPage />} />
 <Route path="/result" element={<ResultPage />} />
 ```
 
-### 1️⃣ 백엔드(flask) 실행
+### 백엔드(flask) 실행
 
 ```sh
 python backend/app.py
