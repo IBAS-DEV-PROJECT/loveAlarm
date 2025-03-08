@@ -49,16 +49,16 @@ const Circle = styled.div`
 // 설명 텍스트
 const Text = styled.p`
   color: white;
-  font-size: 32px;
+  font-size: 64px;
   text-align: center;
   margin-bottom: 30px;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 1.4;
 `;
 
 const PinkCircle = styled.div`
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   background: #e91e63;
   border-radius: 50%;
   position: relative;
@@ -77,8 +77,8 @@ const PinkCircle = styled.div`
   }
 
   img {
-    width: 40%;
-    height: 40%;
+    width: 60%;
+    height: 60%;
     object-fit: contain;
   }
 `;
@@ -86,12 +86,12 @@ const PinkCircle = styled.div`
 const LoadingScreen = () => {
   return (
     <Background>
-      <Text>로딩 중...</Text>
+      <Text>매칭 중...</Text>
 
       {/* 배경 원 */}
-      <Circle size={400} color="rgba(255, 255, 255, 0.2)" />
-      <Circle size={300} color="rgba(255, 255, 255, 0.4)" />
-      <Circle size={200} color="rgba(255, 255, 255, 0.6)" />
+      <Circle size={600} color="rgba(255, 255, 255, 0.2)" />
+      <Circle size={500} color="rgba(255, 255, 255, 0.4)" />
+      <Circle size={400} color="rgba(255, 255, 255, 0.6)" />
 
       {/* 하트 버튼 */}
       <PinkCircle>
