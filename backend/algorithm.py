@@ -2,6 +2,29 @@ import numpy as np
 import csv
 from sklearn.metrics.pairwise import cosine_similarity
 
+"""수정한 부분입니다"""
+
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_PATH = os.path.join(BASE_DIR, "data/data.csv")
+
+def delete_user_from_db(best_match_name):
+    """CSV에서 best_match_name을 가진 사용자의 데이터를 삭제하는 함수"""
+    try:
+        df = pd.read_csv(DATA_PATH, encoding="utf-8")
+        df = df[df["user_name"] != best_match_name]
+        df.to_csv(DATA_PATH, index=False, encoding="utf-8")
+
+        print(f"{best_match_name} 삭제 완료!")
+        return True
+
+    except Exception as e:
+        print(f"CSV 업데이트 중 오류 발생: {str(e)}")
+        return False
+
+"""수정한 부분입니다"""
+
 def encode_single_response(question_idx, answer):
     """
     question_idx:
@@ -40,7 +63,7 @@ def scale_encoded_vectors_for_cosine_9(encoded_matrix, question_weights):
     encoded_matrix[:, 14]   *= w_sqrt[8]
     return encoded_matrix
 
-def load_candidate_data(csv_file='backend/data/data.csv'):
+def load_candidate_data(csv_file='data/data.csv'):
     candidates = []
     candidate_names = []
     with open(csv_file, newline='', encoding='utf-8') as csvfile:
