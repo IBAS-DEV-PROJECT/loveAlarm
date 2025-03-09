@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useAnswers } from '../../context/AnswersContext';
 import { useNavigate } from 'react-router-dom';
+import { useAnswers } from '../../context/AnswersContext';
 
 // styles
 import { FlexBox } from '../../styles/common/FlexStyle';
@@ -34,6 +34,7 @@ const Button = styled.button`
 `;
 
 const NavButtons = ({ currentIndex, setCurrentIndex, questions, answers }) => {
+  const navigate = useNavigate();
   const { setResult, setLoading } = useAnswers();
 
   const handleNext = () => {
@@ -49,9 +50,9 @@ const NavButtons = ({ currentIndex, setCurrentIndex, questions, answers }) => {
   };
 
   const handleSubmit = async () => {
-    const navigate = useNavigate();
-
     setLoading(true);
+
+    const startTime = Date.now();
 
     try {
       const submitResponse = await fetch('http://127.0.0.1:5000/api/submit', {
@@ -80,6 +81,12 @@ const NavButtons = ({ currentIndex, setCurrentIndex, questions, answers }) => {
       const matchData = await matchResponse.json();
       console.log('✅ /api/match: Match result:', matchData);
       setResult(matchData);
+
+      const elapsedTime = Date.now() - startTime;
+      const minLoadingTime = 3000;
+      if (elapsedTime < minLoadingTime) {
+        await new Promise((resolve) => setTimeout(resolve, minLoadingTime - elapsedTime));
+      }
 
       navigate('/result');
     } catch (error) {

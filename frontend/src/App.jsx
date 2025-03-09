@@ -17,9 +17,9 @@ function App() {
   return (
     <ThemeProvider theme={Theme}>
       <GlobalStyles />
-      <Routes>
-        {loading && <LoadingPage />}
+      {loading && <LoadingPage />}
 
+      <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/test" element={<TestPage />} />
         <Route path="/result" element={<ResultPage />} />
