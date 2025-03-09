@@ -47,30 +47,41 @@ const NavButtons = ({ currentIndex, setCurrentIndex, questions, answers }) => {
     }
   };
 
-  // 완료 버튼 클릭 시, API 호출
   const handleSubmit = async () => {
     setLoading(true);
     // http://127.0.0.1:5000/api/submit
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/match', {
+      // 1) /api/submit로 답변 전송
+      const submitResponse = await fetch('http://127.0.0.1:5000/api/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(answers),
       });
-
-      if (!response.ok) {
+      if (!submitResponse.ok) {
         throw new Error('Failed to submit answers');
       }
+      console.log('✅ /api/submit: Answers submitted successfully!');
 
-      const data = await response.json();
-      setResult(data);
+      const matchResponse = await fetch('http://127.0.0.1:5000/api/match', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(answers),
+      });
+      if (!matchResponse.ok) {
+        throw new Error('Failed to fetch match results');
+      }
 
-      console.log(data);
-      alert(`테스트 완료!`);
+      const matchData = await matchResponse.json();
+      console.log('✅ /api/match: Match result:', matchData);
+
+      setResult(matchData);
     } catch (error) {
+      console.error('제출 중 오류 발생:', error);
       alert('제출 중 오류가 발생했습니다. 다시 시도해주세요.');
     } finally {
       setLoading(false);

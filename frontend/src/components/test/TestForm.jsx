@@ -23,7 +23,9 @@ const TestFieldContainer = styled(FlexBox)`
 
 const TestForm = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const { answers, setAnswers } = useAnswers();
+
+  const { answers, setAnswers, result } = useAnswers();
+
 
   const handleAnswerChange = (answer) => {
     setAnswers((prev) => ({
@@ -35,7 +37,9 @@ const TestForm = () => {
   return (
     <Container row="start">
       <Banner />
+
       <FlexBox dir="col" row="between" col="center" height="50%" margin="4.5rem">
+
         <TestFieldContainer dir="col" row="center" col="center">
           <TestField
             question={questions[currentIndex]}
@@ -46,12 +50,22 @@ const TestForm = () => {
             questions={questions}
           />
         </TestFieldContainer>
+
         <NavButtons
           currentIndex={currentIndex}
           setCurrentIndex={setCurrentIndex}
           questions={questions}
           answers={answers}
         />
+
+        {result && (
+          <div style={{ marginTop: '20px', textAlign: 'center' }}>
+            <h2>매칭 결과</h2>
+            <p>베스트 매치 이름: {result.best_match_name}</p>
+            <p>베스트 점수: {result.best_score}</p>
+            <p>유사도 목록: {JSON.stringify(result.all_similarities)}</p>
+          </div>
+        )}
       </FlexBox>
     </Container>
   );

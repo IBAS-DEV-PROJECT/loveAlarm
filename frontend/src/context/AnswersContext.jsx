@@ -1,9 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 
-// Context 생성
-const AnswersContext = createContext();
+const AnswersContext = createContext(null);
 
-// Provider 컴포넌트
 export const AnswersProvider = ({ children }) => {
   const [answers, setAnswers] = useState({});
   const [result, setResult] = useState(null);
@@ -18,7 +16,6 @@ export const AnswersProvider = ({ children }) => {
   );
 };
 
-// Context를 쉽게 가져오는 훅
 export const useAnswers = () => {
   const context = useContext(AnswersContext);
   if (!context) {
