@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useAnswers } from '../../context/AnswersContext';
+import { useNavigate } from 'react-router-dom';
 
 // styles
 import { FlexBox } from '../../styles/common/FlexStyle';
@@ -48,11 +49,11 @@ const NavButtons = ({ currentIndex, setCurrentIndex, questions, answers }) => {
   };
 
   const handleSubmit = async () => {
+    const navigate = useNavigate();
+
     setLoading(true);
-    // http://127.0.0.1:5000/api/submit
 
     try {
-      // 1) /api/submit로 답변 전송
       const submitResponse = await fetch('http://127.0.0.1:5000/api/submit', {
         method: 'POST',
         headers: {
@@ -78,8 +79,9 @@ const NavButtons = ({ currentIndex, setCurrentIndex, questions, answers }) => {
 
       const matchData = await matchResponse.json();
       console.log('✅ /api/match: Match result:', matchData);
-
       setResult(matchData);
+
+      navigate('/result');
     } catch (error) {
       console.error('제출 중 오류 발생:', error);
       alert('제출 중 오류가 발생했습니다. 다시 시도해주세요.');
